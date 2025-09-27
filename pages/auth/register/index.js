@@ -1,6 +1,8 @@
 import { registerUser } from "../../../services/authService.js";
 import { getFormData } from "../../../utils/formUtils.js";
 import { showToast } from "../../../ui/shared/showToast.js";
+import { renderNavbar } from "../../../ui/navbar/navbar.js";
+renderNavbar();
 const form = document.getElementById("registerForm");
 form.addEventListener("submit", async (e) => {
     e.preventDefault();

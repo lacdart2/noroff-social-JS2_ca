@@ -8,7 +8,8 @@ import { getFormData } from "../../../utils/formUtils.js";
 import { showToast } from "../../../ui/shared/showToast.js"
 import { loginUser } from "../../../services/authService.js";
 import { save } from "../../../utils/storage.js";
-
+import { renderNavbar } from "../../../ui/navbar/navbar.js";
+renderNavbar();
 
 
 const form = document.getElementById("loginForm");
