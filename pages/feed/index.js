@@ -27,8 +27,8 @@ const limit = 30;
  */
 async function renderHighlights() {
     try {
-        const posts = await fetchAllPosts();
-        const highlights = posts.slice(0, 6);
+        const posts = await fetchAllPosts(20);
+        const highlights = posts.slice(0, 8);
         hideLoader();
 
         highlightsContainer.innerHTML = "";

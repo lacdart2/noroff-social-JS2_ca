@@ -25,7 +25,7 @@ form.addEventListener("submit", async (e) => {
         showToast(`✅ Welcome back, ${data.data.name}!`, "success");
 
         setTimeout(() => {
-            window.location.href = "../../profile/index.html";
+            window.location.href = "../../../pages/profile/index.html";
         }, 1500);
     } catch (err) {
         console.error(err);

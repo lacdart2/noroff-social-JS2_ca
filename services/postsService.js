@@ -127,7 +127,6 @@ export async function smartSearchPosts(q, { limit = 20, page = 1 } = {}) {
         results = results.concat(tagRes.value);
     }
 
-    // Deduplicate by id
     const seen = new Set();
     const unique = results.filter(post => {
         if (seen.has(post.id)) return false;

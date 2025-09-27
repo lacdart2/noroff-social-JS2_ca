@@ -15,7 +15,6 @@ export function createFeedCard(post) {
     "feed-card flex items-start gap-4 bg-gray-900 rounded-2xl shadow-md p-4 cursor-pointer hover:shadow-lg hover:-translate-y-1 transition";
 
   card.innerHTML = `
-    <!-- Image -->
     ${post.media?.url
       ? `<img src="${post.media.url}" 
                  alt="${post.media.alt || "post media"}"

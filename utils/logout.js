@@ -7,7 +7,7 @@ import { redirectToLogin } from "./navigation.js";
 export function logoutUser() {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("user");
-    window.location.href = "../auth/login/index.html";
+    window.location.href = "/index.html";
 
     redirectToLogin();
 }

@@ -607,6 +607,23 @@ input:focus, input:hover {
     animation: scroll 30s linear infinite;
 }
 
+@keyframes scrollX {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-scroll {
+    display: flex;
+    width: max-content;
+    animation: scrollX 25s linear infinite;
+}
+
+
 /** Notifications****/
 
 
