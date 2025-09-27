@@ -1,33 +1,16 @@
 import { registerUser } from "../../../services/authService.js";
 import { getFormData } from "../../../utils/formUtils.js";
-import { showMessage } from "../../../utils/showMessage.js";
-
+import { showToast } from "../../../ui/shared/showToast.js";
 const form = document.getElementById("registerForm");
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
     console.log("form submitted!");
-
     if (!form) {
         console.error("Form element not found");
         return;
     }
-
     const formData = new FormData(form);
 
-
-    /*  //required fields 
-     const name = formData.get("name")?.trim();
-     const email = formData.get("email")?.trim();
-     const password = formData.get("password").trim();
- 
- 
-     // optional fields 
-     const bio = formData.get("bio")?.trim();
-     const avatarUrl = formData.get("avatarUrl")?.trim();
-     const avatarAlt = formData.get("avatarAlt")?.trim();
-     const bannerUrl = formData.get("bannerUrl")?.trim();
-     const bannerAlt = formData.get("bannerAlt")?.trim();
-     const venueManager = formData.get("venueManager") === "on"; */
     const {
         name,
         email,
@@ -68,7 +51,7 @@ form.addEventListener("submit", async (e) => {
         console.log("✅ Registration successful", result);
 
         // show message to ui helper 
-        showMessage("Account created successfully! ✅ You can now log in.", "ok");
+        showToast("Account created successfully! ✅ You can now log in.", "success");
         setTimeout(() => {
             window.location.href = "../login/index.html";
         }, 2000);
@@ -76,7 +59,7 @@ form.addEventListener("submit", async (e) => {
     } catch (err) {
         console.error("❌ Registration failed:", err.message);
         // show message to ui helper 
-        showMessage("❌ " + err.message, "err");
+        showToast("❌ " + err.message, "error");
     }
 
     console.log("Payload to send:", payload);

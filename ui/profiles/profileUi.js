@@ -1,17 +1,9 @@
-/**
- * @fileoverview UI rendering helpers for profile previews.
- */
 
 /**
  * Toggle visibility between posts, followers, following previews
  * @param {string} idToShow - The section to show
  */
-/* export function togglePreview(idToShow) {
-  const all = ["previewPosts", "previewFollowers", "previewFollowing"];
-  all.forEach(id => {
-    document.getElementById(id).classList.toggle("hidden", id !== idToShow);
-  });
-} */
+
 export function togglePreview(idToShow) {
   const all = ["previewPosts", "previewFollowers", "previewFollowing"];
 
@@ -20,17 +12,13 @@ export function togglePreview(idToShow) {
     if (!el) return;
 
     if (id === idToShow) {
-      // Toggle instead of always showing
       el.classList.toggle("hidden");
     } else {
-      el.classList.add("hidden"); // Always hide the others
+      el.classList.add("hidden");
     }
   });
 }
 
-/**
- * Render posts preview
- */
 export function renderPostsPreview(posts) {
   const container = document.getElementById("previewPosts");
   container.innerHTML = posts.slice(0, 3).map(post => `
