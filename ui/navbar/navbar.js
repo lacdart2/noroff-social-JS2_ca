@@ -7,7 +7,6 @@
 import { renderNotificationsList, checkNotifications, markAllAsSeen } from "../../services/notifications/notifications.js";
 import { load, save } from "../../utils/storage.js";
 
-
 export function renderNavbar(containerId = "navbarContainer") {
   const user = JSON.parse(localStorage.getItem("user"));
   if (!user) return;
@@ -17,19 +16,19 @@ export function renderNavbar(containerId = "navbarContainer") {
 
   container.innerHTML = `
         <nav class="bg-gray-900 text-gray-200 shadow-lg p-4 px-4 flex justify-between items-center m-0">
-          <a href="/pages/feed/index.html" class="text-xl font-bold text-blue-500 hover:text-blue-400">
+          <a href="/pages/feed/index.html" class="text-xl font-bold text-purple-500 hover:text-purple-400">
             MySocialApp
           </a>
           <div class="flex items-center justify-start gap-6 px-4">
-            <a href="/pages/feed/index.html" class="flex items-center gap-1 text-gray-400 hover:text-blue-400">
+            <a href="/pages/feed/index.html" class="flex items-center gap-1 text-gray-400 hover:text-purple-300">
               <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
               <span>Home</span>
             </a>
-            <a href="/pages/posts/index.html" class="flex items-center gap-1 text-gray-400 hover:text-blue-400">
+            <a href="/pages/posts/index.html" class="flex items-center gap-1 text-gray-400 hover:text-purple-300">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
               <span>Posts</span>
             </a>
-            <a href="/pages/profiles/index.html" class="flex items-center gap-1 text-gray-400 hover:text-blue-400">
+            <a href="/pages/profiles/index.html" class="flex items-center gap-1 text-gray-400 hover:text-purple-300">
                     <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-users"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
                     <span>Profiles</span>
                   </a>
@@ -120,7 +119,6 @@ export function renderNavbar(containerId = "navbarContainer") {
    </div>
   </nav>
 `;
-
 
   updateBellBadgeAndIcon();
 
