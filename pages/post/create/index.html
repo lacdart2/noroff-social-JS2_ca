@@ -10,61 +10,68 @@
     <script type="module" src="./index.js" defer></script>
 </head>
 
-<body class="bg-dark text-gray-800 font-sans">
-    <div id="navbarContainer"></div>
-    <div class="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-6 mt-8">
-        <div class="bg-gray-900 shadow-lg rounded-xl p-6 text-gray-200">
+<body class="flex flex-col min-h-screen bg-black text-white">
+    <header class="w-full p-2">
+        <div id="navbarContainer" class="w-full"></div>
 
-            <h1 class="text-gray-200 text-2xl font-semibold mb-4 text-black">Create a New Post</h1>
+    </header>
+    <main class="flex-1">
+        <div class="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-6 mt-8">
+            <div class="bg-gray-900 shadow-lg rounded-xl p-6 text-gray-200">
 
-            <form id="createPostForm" class="space-y-4">
-                <div>
-                    <label for="title" class="block text-sm font-medium text-gray-300">Title</label>
-                    <input type="text" id="title" name="title"
-                        class="w-full bg-gray-800 border border-gray-700 text-gray-200 rounded-lg p-3 placeholder-gray-400 focus:ring-2 focus:ring-gray  outline-none" />
-                </div>
+                <h1 class="text-gray-200 text-2xl font-semibold mb-4 text-black">Create a New Post</h1>
 
-                <div>
-                    <label for="body" class="block text-sm font-medium text-gray-300">Body</label>
-                    <textarea id="body" name="body" rows="4"
-                        class="w-full bg-gray-800 border border-gray-700 text-gray-200 rounded-lg p-3 placeholder-gray-400 focus:ring-2 focus:ring-gray  outline-none"></textarea>
-                </div>
+                <form id="createPostForm" class="space-y-4">
+                    <div>
+                        <label for="title" class="block text-sm font-medium text-gray-300">Title</label>
+                        <input type="text" id="title" name="title"
+                            class="w-full bg-gray-800 border border-gray-700 text-gray-200 rounded-lg p-3 placeholder-gray-400 focus:ring-2 focus:ring-gray  outline-none" />
+                    </div>
 
-                <div>
-                    <label for="media" class="block text-sm font-medium text-gray-300">Media URL (optional)</label>
-                    <input type="url" id="media" name="media"
-                        class="w-full bg-gray-800 border border-gray-700 text-gray-200 rounded-lg p-3 placeholder-gray-400 focus:ring-2 focus:ring-gray  outline-none"
-                        placeholder="https://cdn2.thecatapi.com/images/abc.jpg" />
-                </div>
-                <div class="mb-4">
-                    <label for="tagInput" class="text-sm font-medium block mb-1 font-medium text-gray-300">Tags (max
-                        3)</label>
-                    <input type="text" id="tagInput" placeholder="Type a tag and press Enter"
-                        class="w-full bg-gray-800 border border-gray-700 text-gray-200 rounded-lg p-3 placeholder-gray-400 focus:ring-2 focus:ring-gray  outline-none" />
-                    <div id="tagsContainer" class="flex gap-2 flex-wrap mt-2"></div>
-                </div>
-                <button type="submit"
-                    class="bg-purple-900 hover:bg-blue-700 text-white px-6 py-2 rounded font-medium transition">
-                    Create Post
-                </button>
-            </form>
+                    <div>
+                        <label for="body" class="block text-sm font-medium text-gray-300">Body</label>
+                        <textarea id="body" name="body" rows="4"
+                            class="w-full bg-gray-800 border border-gray-700 text-gray-200 rounded-lg p-3 placeholder-gray-400 focus:ring-2 focus:ring-gray  outline-none"></textarea>
+                    </div>
+
+                    <div>
+                        <label for="media" class="block text-sm font-medium text-gray-300">Media URL (optional)</label>
+                        <input type="url" id="media" name="media"
+                            class="w-full bg-gray-800 border border-gray-700 text-gray-200 rounded-lg p-3 placeholder-gray-400 focus:ring-2 focus:ring-gray  outline-none"
+                            placeholder="https://cdn2.thecatapi.com/images/abc.jpg" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="tagInput" class="text-sm font-medium block mb-1 font-medium text-gray-300">Tags (max
+                            3)</label>
+                        <input type="text" id="tagInput" placeholder="Type a tag and press Enter"
+                            class="w-full bg-gray-800 border border-gray-700 text-gray-200 rounded-lg p-3 placeholder-gray-400 focus:ring-2 focus:ring-gray  outline-none" />
+                        <div id="tagsContainer" class="flex gap-2 flex-wrap mt-2"></div>
+                    </div>
+                    <button type="submit"
+                        class="bg-purple-900 hover:bg-blue-700 text-white px-6 py-2 rounded font-medium transition">
+                        Create Post
+                    </button>
+                </form>
+            </div>
+
+            <div class="bg-gray-900 shadow-lg rounded-xl p-6 text-gray-200">
+                <h2 class="text-xl font-semibold text-gray-200 mb-2">Tips for a Great Post 🧠</h2>
+                <ul class="list-disc ml-6 text-sm text-gray-300 space-y-2">
+                    <li>Use a clear, short title</li>
+                    <li>Be honest and friendly in your tone</li>
+                    <li>Add an image (cat images work well 😸)</li>
+                    <li>Keep body text easy to read</li>
+                    <li>Use humor or questions to engage</li>
+                </ul>
+
+                <img src="https://cdn2.thecatapi.com/images/6qi.jpg" alt="Helpful cat"
+                    class="rounded-lg mt-6 shadow-lg border" />
+            </div>
+
+
+
         </div>
-
-        <div class="bg-gray-900 shadow-lg rounded-xl p-6 text-gray-200">
-            <h2 class="text-xl font-semibold text-gray-200 mb-2">Tips for a Great Post 🧠</h2>
-            <ul class="list-disc ml-6 text-sm text-gray-300 space-y-2">
-                <li>Use a clear, short title</li>
-                <li>Be honest and friendly in your tone</li>
-                <li>Add an image (cat images work well 😸)</li>
-                <li>Keep body text easy to read</li>
-                <li>Use humor or questions to engage</li>
-            </ul>
-
-            <img src="https://cdn2.thecatapi.com/images/6qi.jpg" alt="Helpful cat"
-                class="rounded-lg mt-6 shadow-lg border" />
-        </div>
-
-    </div>
+    </main>
 </body>
 
 </html>
