@@ -30,19 +30,20 @@
 </head>
 
 <body class="flex flex-col min-h-screen bg-black text-white">
-    <header class="w-full p-2">
+    <header class="w-full p-2 ">
         <div id="navbarContainer" class="w-full"></div>
+
     </header>
-    <main class="max-w-7xl mx-auto p-4 flex flex-col lg:flex-row gap-6">
-        <div class="left-side-profiles order-2 lg:order-1 flex-1 flex flex-col">
-            <div id="profileSearchContainer" class="mb-4"></div>
+    <main class="w-full mx-auto p-4 flex flex-col items-start justify-start lg:flex-row gap-6 ">
+        <div class="left-side-profiles order-2 lg:order-1 flex-1 flex flex-col ">
+            <div id="profileSearchContainer" class="mt-10"></div>
             <div id="searchFeedback" class="show-results text-xs text-gray-400 mb-6 py-1"></div>
             <section id="usersGrid" class="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"></section>
             <div id="batteryLoader" class="flex justify-center items-center my-10"></div>
             <div id="loadMoreContainer" class="flex justify-center mt-6 "></div>
         </div>
         <aside
-            class="order-1 lg:order-2 w-full lg:w-80 bg-brand-900/20 border border-brand-700/30 rounded-2xl p-4 space-y-4 shadow-lg h-fit">
+            class="order-1 lg:order-2 w-full lg:w-80 bg-brand-900/20 border border border-gray-800 rounded-2xl p-4 space-y-4 shadow-xl h-fit">
             <h2 class="flex items-center gap-1 text-lg font-semibold border-b border-brand-700 pb-2 mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
@@ -57,10 +58,10 @@
         </aside>
 
     </main>
-    <footer class="bg-gray-900 border-t border-gray-700 py-4">
+    <footer class="bg-gray-900 border-t border-gray-700 py-4 mt-6">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">
             <p class="text-sm text-gray-500">
-                © <span id="year"></span> MySocialApp. All rights reserved.
+                © <span id="year"></span> MySocialApp by Lakhdar Hafsi. All rights reserved.
             </p>
             <div class="flex gap-4 text-sm">
                 <a href="#" class="hover:text-purple-400">About</a>
@@ -69,6 +70,7 @@
             </div>
         </div>
     </footer>
+
 </body>
 
 </html>

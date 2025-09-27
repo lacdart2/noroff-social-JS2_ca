@@ -11,7 +11,7 @@ export function renderSearchBar(mountEl, { placeholder, onInput, id = "searchInp
     <header class="flex items-center gap-3 mb-4">
       <input id="${id}" type="search"
         placeholder="${placeholder}"
-        class="w-full bg-gray-800  rounded px-3 py-2 text-gray-200 placeholder-gray-400 focus:ring-1 focus:ring-purple-800 outline-none"
+        class="w-80 bg-gray-800 mt-4 rounded-2xl px-3 py-2 text-gray-200 placeholder-gray-400 focus:ring-1 focus:ring-purple-800 outline-none shadow text-sm"
         aria-label="Search" />
     </header>
   `;

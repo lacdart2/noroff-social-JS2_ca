@@ -113,6 +113,15 @@ export function renderNavbar(containerId = "navbarContainer") {
 </nav>
 `
 
+  const currentPath = window.location.pathname;
+
+  document.querySelectorAll("#menuLinks a").forEach(link => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.remove("text-gray-400", "hover:text-purple-300");
+      link.classList.add("text-purple-400", "font-semibold", "underline");
+    }
+  });
+
   updateBellBadgeAndIcon();
 
   const bell = document.getElementById("notificationBtn");

@@ -195,7 +195,7 @@ async function buildTrendingFromMap(engagementMap) {
 
     const sorted = entries.sort((a, b) => b.engagementScore - a.engagementScore);
 
-    const top5 = sorted.slice(0, 5);
+    const top5 = sorted.slice(0, 6);
 
     // build "profile-like" objects directly
     return top5.map((user) => buildProfileFromMap(user.name, user));
