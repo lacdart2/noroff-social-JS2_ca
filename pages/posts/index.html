@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Posts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="./index.js"></script>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body class="bg-gray-950 text-gray-100 min-h-screen flex flex-col">
+  <div id="navbarContainer"></div>
+  <header class="max-w-7xl mx-auto w-full px-4 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+    <a href="../post/create/index.html"
+      class="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="20" height="20"
+        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none">
+        <path stroke="none" d="M0 0h24v24H0z" />
+        <path d="M12 5v14m-7 -7h14" />
+      </svg>
+      <span>Create Post</span>
+    </a>
+  </header>
+
+  <div id="postSearchContainer" class="max-w-7xl mx-auto w-full px-4 mb-4"></div>
+  <main class="flex-1 container mx-auto px-4">
+    <div id="batteryLoader" class="flex justify-center items-center my-10"></div>
+    <div id="postsContainer" class="grid gap-4 md:grid-cols-2 lg:grid-cols-3"></div>
+    <div id="paginationControls" class="mt-8 flex justify-center gap-2">
+      <button id="prevPageBtn"
+        class="px-3 py-2 bg-gray-800 text-gray-200 rounded hover:bg-gray-600 hover:text-white disabled:opacity-50">
+        Prev
+      </button>
+      <span id="currentPage" class="px-3 py-2 bg-gray-600 text-gray-200 rounded">Page 1</span>
+      <button id="nextPageBtn"
+        class="px-3 py-2 bg-gray-800 text-gray-200 rounded hover:bg-gray-600 hover:text-white disabled:opacity-50">
+        Next
+      </button>
+    </div>
+  </main>
+</body>
+
+</html>

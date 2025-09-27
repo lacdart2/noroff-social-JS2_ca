@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Register — Noroff Social</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../../style.css">
+    <script type="module" src="./index.js" defer></script>
+</head>
+
+<body class="relative min-h-screen bg-gray-900 text-gray-200 flex items-center justify-center p-6">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div
+        class="relative z-10 flex flex-col md:flex-row w-full max-w-4xl bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
+        <div class="hidden md:flex md:flex-col md:justify-center md:w-1/2 bg-gray-900 p-10 text-center">
+            <h1 class="text-4xl font-extrabold text-white mb-4">Noroff Social</h1>
+            <p class="text-gray-400 text-lg">
+                Join the community, share your posts, and connect with classmates!
+            </p>
+            <img src="https://placehold.co/300x200?text=Noroff+Social" alt="Noroff Social banner"
+                class="mt-8 rounded-lg shadow-lg mx-auto">
+        </div>
+
+        <div class="w-full md:w-1/2 p-8 md:p-10 space-y-6">
+            <h2 class="text-2xl font-bold text-white text-center md:text-left">Create Account</h2>
+            <p class="text-gray-400 text-center md:text-left">Fill in your details to get started.</p>
+
+            <form id="registerForm" class="space-y-5" novalidate>
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Display Name</label>
+                    <input id="name" name="name" type="text" placeholder="Your display name" required class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 focus:ring-2 
+                   focus:ring-blue-500 outline-none text-gray-200 placeholder-gray-400" />
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                    <input id="email" name="email" type="email" placeholder="your@stud.noroff.no" required class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 focus:ring-2 
+                   focus:ring-blue-500 outline-none text-gray-200 placeholder-gray-400" />
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-300 mb-1">Password</label>
+                    <input id="password" name="password" type="password" placeholder="Password (min 8 chars)" required
+                        class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 focus:ring-2 
+                   focus:ring-blue-500 outline-none text-gray-200 placeholder-gray-400" />
+                </div>
+                <div>
+                    <label for="bio" class="block text-sm font-medium text-gray-300 mb-1">Bio (optional)</label>
+                    <textarea id="bio" name="bio" placeholder="Tell us about yourself..." class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 focus:ring-2 
+                   focus:ring-blue-500 outline-none text-gray-200 placeholder-gray-400"></textarea>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="avatarUrl" class="block text-sm font-medium text-gray-300 mb-1">Avatar URL</label>
+                        <input id="avatarUrl" name="avatarUrl" placeholder="https://..." class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-200 
+                     placeholder-gray-400 focus:ring-2 focus:ring-blue-500 outline-none" />
+                    </div>
+                    <div>
+                        <label for="avatarAlt" class="block text-sm font-medium text-gray-300 mb-1">Avatar Alt</label>
+                        <input id="avatarAlt" name="avatarAlt" placeholder="Describe your avatar" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-200 
+                     placeholder-gray-400 focus:ring-2 focus:ring-blue-500 outline-none" />
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="bannerUrl" class="block text-sm font-medium text-gray-300 mb-1">Banner URL</label>
+                        <input id="bannerUrl" name="bannerUrl" placeholder="https://..." class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-200 
+                     placeholder-gray-400 focus:ring-2 focus:ring-blue-500 outline-none" />
+                    </div>
+                    <div>
+                        <label for="bannerAlt" class="block text-sm font-medium text-gray-300 mb-1">Banner Alt</label>
+                        <input id="bannerAlt" name="bannerAlt" placeholder="Describe your banner" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-200 
+                     placeholder-gray-400 focus:ring-2 focus:ring-blue-500 outline-none" />
+                    </div>
+                </div>
+                <label class="flex items-center gap-2 text-sm text-gray-300">
+                    <input type="checkbox" name="venueManager"
+                        class="accent-blue-500 w-4 h-4 rounded focus:ring-2 focus:ring-blue-500">
+                    Venue Manager (optional)
+                </label>
+                <button id="submitBtn" type="submit"
+                    class="w-full bg-blue-600 text-white rounded-lg p-3 hover:bg-blue-700 transition font-semibold">
+                    Create account
+                </button>
+            </form>
+
+            <p class="text-center text-gray-400 text-sm">
+                Already have an account?
+                <a href="../login/index.html" class="text-blue-400 hover:underline">Login</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
