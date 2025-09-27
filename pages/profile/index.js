@@ -219,7 +219,6 @@ document.getElementById("modalForm")?.addEventListener("submit", async (e) => {
 
 
         localStorage.setItem("user", JSON.stringify(updatedProfile));
-        console.log(localStorage.getItem("user"));
         closeModal();
         showToast("✅ Profile updated successfully!", "success");
 

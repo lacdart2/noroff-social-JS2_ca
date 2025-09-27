@@ -1,5 +1,5 @@
 /**
- * Logs out the current user by clearing localStorage
+ * logs out the current user by clearing localStorage
  * and redirecting to the login page.
  */
 import { redirectToLogin } from "./navigation.js";

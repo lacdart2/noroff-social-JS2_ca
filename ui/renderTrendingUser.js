@@ -1,11 +1,6 @@
-/**
- * @fileoverview UI component: Trending user card
- * Used in the trending sidebar on the profiles page
- * Styled like a mini feed card
- */
 
 /**
- * Render a trending user card
+ * render a trending user card
  * @param {HTMLElement} container
  * @param {{ name: string, avatar?: { url?: string, alt?: string }, comments?: number, reactions?: number }} user
  */

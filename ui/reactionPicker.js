@@ -1,15 +1,14 @@
-/**
- * @fileoverview Handles rendering and interactions for emoji reaction picker (posts).
- */
-import { reactToPost } from "../services/postReactions.js";
 
 /**
- * Wire up the reaction picker for a single post detail view.
+ * wire up the reaction picker for a single post detail view.
  * @param {string|number} postId
- * Expects:
- *  - Button:  #reactionBtn
- *  - Picker:  #emojiPicker  with children having class ".emoji"
+ * expects:
+ *  - button:  #reactionBtn
+ *  - picker:  #emojiPicker  with children having class ".emoji"
  */
+
+import { reactToPost } from "../services/postReactions.js";
+import { showToast } from "./shared/showToast.js";
 export function setupReactionPicker(postId) {
     const btn = document.getElementById("reactionBtn");
     const picker = document.getElementById("emojiPicker");
@@ -17,18 +16,15 @@ export function setupReactionPicker(postId) {
 
     let currentReaction = null;
 
-    // Toggle emoji list
     btn.addEventListener("click", () => {
         picker.classList.toggle("hidden");
     });
 
-    // Select an emoji
     picker.querySelectorAll(".emoji").forEach((emoji) => {
         emoji.addEventListener("click", async () => {
             const symbol = emoji.textContent?.trim();
             if (!symbol) return;
 
-            // Optimistic UI: show chosen emoji on the button
             const prev = btn.textContent;
             btn.textContent = symbol;
             currentReaction = symbol;
@@ -38,12 +34,10 @@ export function setupReactionPicker(postId) {
 
             try {
                 const result = await reactToPost(postId, symbol);
-                console.log(`✅ Reacted with ${symbol}`, result);
-                // Optional: refresh counts here if you display them
-                // await fetchPostDetails();
+                showToast(`You reacted with ${symbol}`, "success");
             } catch (error) {
                 console.warn(`⚠️ Backend error for ${symbol}`, error);
-                // Revert UI on failure
+                showToast("❌ Reaction failed. Please try again.", "error");
                 btn.textContent = prev || "😀 React";
             } finally {
                 btn.disabled = false;

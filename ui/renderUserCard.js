@@ -1,5 +1,5 @@
 /**
- * Render a user profile card (clickable whole card)
+ * render a user profile card (clickable whole card)
  * @param {HTMLElement} container
  * @param {{ name: string, avatar?: { url?: string, alt?: string }, bio?: string, _count?: { posts: number } }} user
  */

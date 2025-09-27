@@ -60,11 +60,9 @@
  * @param {Object} profile - Profile object from API
  */
 export function displayProfile(profile) {
-    // Name
     const nameEl = document.getElementById("name");
     if (nameEl) nameEl.textContent = profile.name;
 
-    // Email
     const emailEl = document.getElementById("email");
     if (emailEl) emailEl.textContent = profile.email;
 

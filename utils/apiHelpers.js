@@ -1,5 +1,11 @@
-// Step 1 — create the headers helper
 
+/**
+ * Generic API client to handle GET/POST/PUT/DELETE requests to the Noroff Social API.
+ * Automatically includes API key and access token in headers.
+ * @param {string} endpoint - Relative API endpoint (e.g. /social/posts)
+ * @param {Object} [options={}] - Optional fetch config: method, body, etc.
+ * @returns {Promise<Object>} JSON response data
+ */
 
 import { load } from "./storage.js";
 import { API_KEY } from "./constants.js";
@@ -19,14 +25,6 @@ export function buildHeaders() {
 }
 
 
-
-/**
- * Generic API client to handle GET/POST/PUT/DELETE requests to the Noroff Social API.
- * Automatically includes API key and access token in headers.
- * @param {string} endpoint - Relative API endpoint (e.g. /social/posts)
- * @param {Object} [options={}] - Optional fetch config: method, body, etc.
- * @returns {Promise<Object>} JSON response data
- */
 
 /* 
 export async function apiClient(endpoint, options = {}) {
@@ -58,8 +56,6 @@ export async function apiClient(endpoint, options = {}) {
 
 export async function apiClient(endpoint, options = {}) {
     const BASE_URL = "https://v2.api.noroff.dev";
-
-    // Merge headers but force Content-Type to always exist
     const headers = {
         "Content-Type": "application/json",
         ...buildHeaders(),
