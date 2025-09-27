@@ -604,7 +604,7 @@ input:focus, input:hover {
 .animate-scroll {
     display: flex;
     width: max-content;
-    animation: scroll 30s linear infinite;
+    animation: scroll 10s linear infinite;
 }
 
 @keyframes scrollX {
@@ -615,12 +615,6 @@ input:focus, input:hover {
     100% {
         transform: translateX(-50%);
     }
-}
-
-.animate-scroll {
-    display: flex;
-    width: max-content;
-    animation: scrollX 25s linear infinite;
 }
 
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Feed</title>
+    <title>Feed - MySocialApp</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="./index.js"></script>
     <link rel="stylesheet" href="../../style.css">
@@ -31,11 +31,14 @@
             </section>
             <section class="main-feed-container flex flex-col md:grid md:grid-cols-3 gap-6">
                 <aside
-                    class="aside-section space-y-6 order-1 md:order-none md:sticky md:top-4 md:self-start md:max-h-[90vh] md:overflow-y-auto pr-2">
-                    <div id="latestPosts" class="aside-section bg-gray-800 rounded-xl p-4 shadow"></div>
+                    class="aside-section space-y-6 order-1 md:order-none md:sticky md:top-4 md:self-start md:max-h-[90vh] md:overflow-y-auto p-2">
+                    <div id="latestPosts" class="aside-section bg-gray-800 rounded-xl p-4 shadow overflow-x-hidden">
+                    </div>
                     <div id="trendingTags"
-                        class="aside-section bg-gray-800 rounded-xl p-4 shadow max-h-40 overflow-y-auto"></div>
-                    <div id="peopleYouMayKnow" class="aside-section bg-gray-800 rounded-xl p-4 shadow"></div>
+                        class="aside-section bg-gray-800 rounded-xl p-4 shadow max-h-40 overflow-y-auto overflow-x-hidden ">
+                    </div>
+                    <div id="peopleYouMayKnow"
+                        class="aside-section bg-gray-800 rounded-xl p-4 shadow overflow-x-hidden"></div>
                 </aside>
 
                 <div class="order-2 md:order-none md:col-span-2 flex flex-col gap-6">

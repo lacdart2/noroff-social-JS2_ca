@@ -3,86 +3,128 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Your Profile</title>
+    <title>Your Profile - MySocialApp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../../style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="./index.js" defer></script>
+    <link rel="stylesheet" href="../../style.css" />
 </head>
 
 <body class="flex flex-col min-h-screen bg-black text-white">
     <header class="w-full p-2">
         <div id="navbarContainer" class="w-full"></div>
     </header>
+
     <main class="flex-1">
         <div class="w-full md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
             <div class="relative">
-                <img id="bannerImg" class="w-full h-56 object-cover" alt="Profile banner" />
+                <img id="bannerImg" class="w-full h-56 object-cover rounded-lg" alt="Profile banner" />
                 <span id="bannerText" class="text-xs text-gray-500 break-all block"></span>
                 <div class="absolute -bottom-12 left-6">
-                    <img id="avatarImg" class="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover"
+                    <img id="avatarImg" class="w-24 h-24 rounded-full border-4 border-gray-900 shadow-lg object-cover"
                         alt="Your avatar" />
                 </div>
             </div>
-            <div class="mt-16 bg-white shadow rounded-lg p-6">
+            <div class="mt-16 bg-gray-900 shadow rounded-lg p-6 border border-gray-800">
                 <div class="flex justify-between items-start">
-                    <div class=" flex flex-col align-start justify-start">
-                        <h1 id="name" class="text-2xl font-bold ">User Name</h1>
-                        <p id="email" class="text-gray-500 text-sm">user@email.com</p>
+                    <div class="flex flex-col">
+                        <h1 id="name" class="text-2xl font-bold text-purple-400">User Name</h1>
+                        <p id="email" class="text-gray-400 text-sm">user@email.com</p>
                         <div class="pb-2">
-                            <p id="bioText" class="mt-2 text-gray-700">—</p>
+                            <p id="bioText" class="mt-2 text-gray-300">—</p>
                         </div>
                     </div>
                     <div id="profileHeader" class="flex gap-3">
                         <button id="editProfileBtn"
-                            class="hidden bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">
+                            class="hidden bg-purple-600 text-white px-4 py-2 rounded shadow hover:bg-purple-700 transition">
                             Edit Profile
                         </button>
                     </div>
                 </div>
-
-                <div class="stats-container flex gap-6 mt-6 text-sm text-gray-700">
+                <div class="stats-container flex gap-6 mt-6 text-sm">
                     <div id="myPostsStat"
-                        class="text-white cursor-pointer bg-gray-800 px-4 py-2 rounded-lg shadow flex items-center gap-2 hover:bg-gray-700">
-                        📝 Posts: <span id="countPosts">0</span>
+                        class="cursor-pointer bg-gray-800 px-4 py-2 rounded-lg shadow flex items-center gap-2 hover:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-article">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                            <path d="M7 8h10" />
+                            <path d="M7 12h10" />
+                            <path d="M7 16h10" />
+                        </svg>
+                        Posts: <span id="countPosts">0</span>
                     </div>
                     <div id="followersStat"
-                        class="text-white cursor-pointer bg-gray-800 px-4 py-2 rounded-lg shadow flex items-center gap-2 hover:bg-gray-700">
-                        👥 Followers: <span id="countFollowers">0</span>
+                        class="cursor-pointer bg-gray-800 px-4 py-2 rounded-lg shadow flex items-center gap-2 hover:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-users">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+                        </svg>
+                        Followers: <span id="countFollowers">0</span>
                     </div>
                     <div id="followingStat"
-                        class="text-white cursor-pointer bg-gray-800 px-4 py-2 rounded-lg shadow flex items-center gap-2 hover:bg-gray-700">
-                        ➕ Following: <span id="countFollowing">0</span>
+                        class="cursor-pointer bg-gray-800 px-4 py-2 rounded-lg shadow flex items-center gap-2 hover:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 5l0 14" />
+                            <path d="M5 12l14 0" />
+                        </svg>
+                        Following: <span id="countFollowing">0</span>
                     </div>
                 </div>
+
                 <div id="previewPosts" class="mt-4 hidden"></div>
                 <div id="previewFollowers" class="mt-4 hidden"></div>
                 <div id="previewFollowing" class="mt-4 hidden"></div>
             </div>
+
             <div id="profilePostsContainer" class="grid gap-4 mt-6"></div>
         </div>
+
         <div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-            <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md relative">
-                <h2 id="modalTitle" class="text-xl font-semibold mb-4">Edit</h2>
+            <div class="bg-gray-900 rounded-lg shadow-lg p-6 w-full max-w-md relative border border-gray-800">
+                <h2 id="modalTitle" class="text-xl font-semibold mb-4 text-purple-400">Edit</h2>
 
                 <form id="modalForm">
                     <div id="modalFields"></div>
                     <div class="flex justify-end mt-4">
-                        <button type="button" id="cancelBtn" class="mr-2 px-4 py-2 bg-gray-300 rounded">
+                        <button type="button" id="cancelBtn"
+                            class="mr-2 px-4 py-2 bg-gray-700 text-gray-300 rounded hover:bg-gray-600">
                             Cancel
                         </button>
-                        <button type="submit" class="px-4 py-2 bg-green-500 text-white rounded">
+                        <button type="submit"
+                            class="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition">
                             Save
                         </button>
                     </div>
                 </form>
 
-                <button id="closeModalBtn" class="absolute top-2 right-3 text-xl text-gray-600 hover:text-gray-800">
+                <button id="closeModalBtn" class="absolute top-2 right-3 text-xl text-gray-400 hover:text-gray-200">
                     &times;
                 </button>
             </div>
         </div>
     </main>
+    <footer class="bg-gray-900 border-t border-gray-700 py-4 mt-6">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">
+            <p class="text-sm text-gray-500">
+                © <span id="year"></span> MySocialApp. All rights reserved.
+            </p>
+            <div class="flex gap-4 text-sm">
+                <a href="#" class="hover:text-purple-400">About</a>
+                <a href="#" class="hover:text-purple-400">Contact</a>
+                <a href="#" class="hover:text-purple-400">Privacy</a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
