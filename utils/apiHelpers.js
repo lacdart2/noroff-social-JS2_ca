@@ -24,36 +24,6 @@ export function buildHeaders() {
     return headers;
 }
 
-
-
-/* 
-export async function apiClient(endpoint, options = {}) {
-    const headers = buildHeaders();
-    const config = {
-        method: options.method || "GET",
-        headers,
-    };
-
-    if (options.body) {
-        config.body = options.body;
-    }
-
-    const BASE_URL = "https://v2.api.noroff.dev";
-    const response = await fetch(`${BASE_URL}${endpoint}`, config);
-
-    let data;
-    const text = await response.text();
-    if (text && response.status !== 204) {
-        data = JSON.parse(text);
-    }
-
-    if (!response.ok) {
-        throw new Error(data?.errors?.[0]?.message || "API request failed");
-    }
-
-    return data?.data || data;
-} */
-
 export async function apiClient(endpoint, options = {}) {
     const BASE_URL = "https://v2.api.noroff.dev";
     const headers = {

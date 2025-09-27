@@ -80,7 +80,6 @@ export async function renderPeopleYouMayKnow(containerId = "peopleYouMayKnow") {
     try {
         const profiles = await getAllProfiles();
 
-        // filter out logged in user
         const currentUser = JSON.parse(localStorage.getItem("user"))?.name;
         const suggestions = profiles.filter(p => p.name !== currentUser).slice(0, 5);
 

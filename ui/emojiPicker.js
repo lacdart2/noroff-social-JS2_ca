@@ -1,4 +1,4 @@
-// /ui/emojiPicker.js
+
 export function setupEmojiPicker(inputId, btnId, pickerId) {
     const input = document.getElementById(inputId);
     const btn = document.getElementById(btnId);
