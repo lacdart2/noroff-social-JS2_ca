@@ -26,7 +26,6 @@ export function renderPosts(posts, container) {
       "post-card bg-gray-900 text-gray-200 shadow-md rounded-xl  p-5 flex flex-col gap-3 cursor-pointer hover:shadow-lg hover:-translate-y-1 transition";
 
     card.innerHTML = `
-      <!-- Header -->
       <div class="flex items-center gap-3">
         <img src="${avatar?.url || 'https://placehold.co/40x40'}" 
              alt="${avatar?.alt || 'avatar'}" 
@@ -36,12 +35,8 @@ export function renderPosts(posts, container) {
           ${name}
         </a>  
       </div>
-
-      <!-- Title & Body -->
       <h2 class="text-lg font-bold text-white">${title}</h2>
       <p class="text-sm text-gray-400 truncate-multiline">${body}</p>
-
-      <!-- Media -->
       ${media?.url
         ? `<img src="${media.url}" 
                  alt="${media.alt || "post image"}" 
@@ -49,7 +44,6 @@ export function renderPosts(posts, container) {
         : ""
       }
 
-      <!-- Stats -->
       <div class="post-stats flex justify-between text-xs text-gray-500 mt-3">
         <div class="flex items-center gap-1">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" 

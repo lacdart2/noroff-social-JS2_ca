@@ -43,91 +43,90 @@ export function renderNavbar(containerId = "navbarContainer") {
 
   // auth navbar
   container.innerHTML = `
-<nav class="text-gray-200 shadow-lg px-4 py-2 w-full m-0 relative">
-  <div class="flex flex-col md:flex-row md:items-center md:justify-between w-full">
-    <div class="flex flex-wrap items-center justify-between w-full gap-4 md:flex-nowrap md:gap-6">
-      <a href="/pages/feed/index.html"
-         class="logo text-xl font-bold text-purple-500 hover:text-purple-400">
-        MySocialApp
-      </a>
+<nav class="text-gray-200 shadow-lg px-4 py-2 w-full m-0 relative border">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between w-full ">
+        <div class="flex w-full flex-wrap items-center justify-between w-full gap-4 md:flex-nowrap md:gap-6">
+            <a href="/pages/feed/index.html" class="logo text-xl font-bold text-purple-500 hover:text-purple-400">
+                MySocialApp
+            </a>
 
-      <div id="menuLinks"
-           class="flex flex-row gap-4 md:gap-6">
-        <a href="/pages/feed/index.html" class="flex items-center gap-1 text-gray-400 hover:text-purple-300">
-          Feed
-        </a>
-        <a href="/pages/posts/index.html" class="flex items-center gap-1 text-gray-400 hover:text-purple-300">
-          Posts
-        </a>
-        <a href="/pages/profiles/index.html" class="flex items-center gap-1 text-gray-400 hover:text-purple-300">
-          Profiles
-        </a>
-      </div>
+            <div id="menuLinks" class="flex flex-row gap-4 md:gap-6">
+                <a href="/pages/feed/index.html" class="flex items-center gap-1 text-gray-400 hover:text-purple-300">
+                    Feed
+                </a>
+                <a href="/pages/posts/index.html" class="flex items-center gap-1 text-gray-400 hover:text-purple-300">
+                    Posts
+                </a>
+                <a href="/pages/profiles/index.html"
+                    class="flex items-center gap-1 text-gray-400 hover:text-purple-300">
+                    Profiles
+                </a>
+            </div>
 
-      <div class="relative notifications-container flex gap-2 mr-2">
-        <button id="notificationBtn" class="relative rounded-full p-2 hover:bg-gray-800">
-          <span id="notificationCount"
-                class="absolute flex items-center justify-center -top-1 -right-0 bg-red-500 text-white text-[12px] w-[16px] h-[16px] px-1 rounded-full leading-none hidden z-10">
-            0
-          </span>
-          <span id="notificationBellIcon"></span>
-        </button>
+            <div class="relative notifications-container flex gap-2 mx-auto md:mr-1 border">
+                <button id="notificationBtn" class="relative rounded-full p-2 hover:bg-gray-800">
+                    <span id="notificationCount"
+                        class="absolute flex items-center justify-center -top-1 -right-0 bg-red-500 text-white text-[12px] w-[16px] h-[16px] px-1 rounded-full leading-none hidden z-10">
+                        0
+                    </span>
+                    <span id="notificationBellIcon"></span>
+                </button>
 
-        <div id="notificationList"
-             class="hidden flex-col absolute right-0 top-full mt-2 w-80
-                    bg-gray-800 border border-gray-700 shadow-xl rounded-lg text-sm max-h-96 overflow-auto
-                    z-50 opacity-0 pointer-events-none transition-all duration-200">
+               <div id="notificationList"
+                  class="hidden flex-col absolute top-full mt-2 w-80
+                          right-0 md:right-0 md:left-auto
+                          left-1/2 -translate-x-1/2 md:translate-x-0
+                          bg-gray-800 border border-gray-700 shadow-xl rounded-lg text-sm max-h-96 overflow-auto
+                          z-50 opacity-0 pointer-events-none transition-all duration-200">
+                </div>
+
+            </div>
         </div>
-      </div>
-    </div>
 
-    <div id="userMenuWrapper"
-         class="flex justify-center mt-4 md:mt-0 md:ml-auto relative">
-      <button id="userMenuBtn"
-        class="flex items-center justify-between gap-2 rounded-full px-2 w-[160px] md:w-[180px] py-1 hover:bg-gray-800 transition ring-1 ring-gray-800 focus:outline-none pr-4"
-              aria-haspopup="true" aria-expanded="false" aria-controls="userMenu">
-          <img src="${user?.avatar?.url || "https://placehold.co/36x36?text=U"}"
-             alt="${user?.avatar?.alt || user?.name || "avatar"}"
-             class="w-9 h-9 rounded-full object-cover border border-gray-700" />
-          <span id="navUserName" class="hidden sm:inline text-gray-200 text-sm font-medium">
-            ${user?.name || ""}
-          </span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
-             stroke="currentColor" stroke-width="2" class="text-gray-400">
-          <path d="M6 9l6 6l6-6"/>
-        </svg>
-      </button>
+        <div id="userMenuWrapper" class="flex justify-center mt-4 md:mt-0 md:ml-auto relative">
+            <button id="userMenuBtn"
+                class="flex items-center justify-between gap-2 rounded-full px-2 w-[160px] md:w-[180px] py-1 hover:bg-gray-800 transition ring-1 ring-gray-800 focus:outline-none pr-4"
+                aria-haspopup="true" aria-expanded="false" aria-controls="userMenu">
+                <img src="${user?.avatar?.url || " https://placehold.co/36x36?text=U"}"
+                    alt="${user?.avatar?.alt || user?.name || " avatar"}"
+                    class="w-9 h-9 rounded-full object-cover border border-gray-700" />
+                <span id="navUserName" class="hidden sm:inline text-gray-200 text-sm font-medium">
+                    ${user?.name || ""}
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor"
+                    stroke-width="2" class="text-gray-400">
+                    <path d="M6 9l6 6l6-6" />
+                </svg>
+            </button>
 
-      <div id="userMenu"
-          class="hidden absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[80%]
+            <div id="userMenu" class="hidden absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[80%]
             md:left-auto md:translate-x-0 md:right-0 md:w-56
             rounded-lg border border-gray-700 bg-gray-800 shadow-xl
-            opacity-0 pointer-events-none transition-all duration-150 z-50"
-           role="menu" aria-labelledby="userMenuBtn">
-           <ul class="p-2 w-full" role="none">
-          <li class="w-full my-2">
-            <a href="/pages/profile/index.html"
-               class="flex items-center gap-2 w-full rounded px-3 py-2 text-sm text-gray-200 hover:bg-gray-700">
-              My Profile
-            </a>
-          </li>
-          <li class="w-full my-2">
-            <a href="/pages/feed/index.html"
-               class="flex items-center gap-2 w-full rounded px-3 py-2 text-sm text-gray-200 hover:bg-gray-700">
-             Feed
-            </a>
-          </li>
-          <li class="my-1 border-t border-gray-700 w-full"></li>
-          <li class="w-full my-2">
-            <button id="logoutBtn" type="button"
-                    class="flex items-center justify-center gap-2 w-full rounded px-3 py-2 text-sm text-red-400 hover:bg-red-800">
-              Logout
-            </button>
-          </li>
-        </ul>
-      </div>
+            opacity-0 pointer-events-none transition-all duration-150 z-50" role="menu" aria-labelledby="userMenuBtn">
+                <ul class="p-2 w-full" role="none">
+                    <li class="w-full my-2">
+                        <a href="/pages/profile/index.html"
+                            class="flex items-center gap-2 w-full rounded px-3 py-2 text-sm text-gray-200 hover:bg-gray-700">
+                            My Profile
+                        </a>
+                    </li>
+                    <li class="w-full my-2">
+                        <a href="/pages/feed/index.html"
+                            class="flex items-center gap-2 w-full rounded px-3 py-2 text-sm text-gray-200 hover:bg-gray-700">
+                            Feed
+                        </a>
+                    </li>
+                    <li class="my-1 border-t border-gray-700 w-full"></li>
+                    <li class="w-full my-2">
+                        <button id="logoutBtn" type="button"
+                            class="flex items-center justify-center gap-2 w-full rounded px-3 py-2 text-sm text-red-400 hover:bg-red-800">
+                            Logout
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
 </nav>
 `;
 

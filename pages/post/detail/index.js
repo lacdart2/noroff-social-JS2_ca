@@ -65,9 +65,9 @@ function renderPost(post) {
   console.log("Post counts:", post._count);
 
   postContainer.innerHTML = `
-<div class="post-details-card grid grid-cols-1 md:grid-cols-3 p-2 gap-6">
-  <div class="post-details-card-left md:col-span-2 space-y-6 ">
-    <div class="card-details-content relative text-gray-100 p-6 rounded-xl shadow-md">
+<div class="post-details-card grid grid-cols-1 md:grid-cols-3 pd-1 md:p-2 gap-6 ">
+  <div class="post-details-card-left md:col-span-2 space-y-6  ">
+    <div class="card-details-content relative text-gray-100 p-6 rounded-xl shadow-md ">
       <h2 class="text-2xl font-bold">${escapeHTML(title)}</h2>
       <p class="text-gray-300 mb-2">${escapeHTML(body)}</p>
 

@@ -271,19 +271,22 @@ input:focus, input:hover {
 /******* details card page ***********/
 #postContainer {
     background-color: #1F2937;
+    min-width: 100%;
+    padding: 0;
 }
 
 .post-card,
 .post-details-card {
     outline-offset: 1px;
     background-color: #111827;
-    /*    background-color: #192338; */
+
     outline-offset: 1px;
     border-radius: var(--radius-15-);
     overflow: hidden;
 
 }
 
+.post-details-card {}
 
 .post-card-img,
 .card-details-content img {
@@ -603,3 +606,17 @@ nav div a svg, nav a svg {
     max-width: 120px;
     display: block;
 }
+
+/* @media only screen and (max-width: 409px) {
+    .notification-container {
+        left: 50%;
+        transform: translateX(-50%);
+        outline: 5px solid red;
+
+    }
+
+    body {
+        background-color: red;
+    }
+
+} */
