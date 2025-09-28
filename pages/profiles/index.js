@@ -38,8 +38,6 @@ const PAGE_SIZE = 10;
 async function init() {
     try {
         showLoader();
-        console.log("🔵 Step 1: Fetching profiles...");
-
         const profilesRes = await getAllProfiles();
         const profiles = Array.isArray(profilesRes)
             ? profilesRes
@@ -156,8 +154,6 @@ function buildEngagementMap(posts) {
         }
     }
 
-    console.log("📊 Engagement map built:");
-    console.table(map);
     return map;
 }
 

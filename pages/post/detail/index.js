@@ -97,14 +97,19 @@ function renderPost(post) {
         <button id="reactionBtn" class="px-3 py-2 bg-gray-700 text-white rounded-full hover:bg-gray-600 ring-1 ring-gray-600">
                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-heart"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></svg>
         </button>
-        <div id="emojiPicker" class="hidden bg-gray-400 flex gap-2 rounded-full bg-gray-800 px-3 py-1">
-          <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">👍</span>
-          <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">👎</span>
-          <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">❤️</span>
-          <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">🔥</span>
-          <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">😂</span>
-          <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">🎉</span>
-        </div>
+       <div id="emojiPicker" class="hidden bg-gray-400 flex gap-2 rounded-full bg-gray-800 px-3 py-1">
+        <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">👍</span>
+        <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">👎</span>
+        <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">❤️</span>
+        <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">🔥</span>
+        <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">🙂</span>
+        <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">😂</span>
+        <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">🎉</span>
+        <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">👀</span>
+        <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">😢</span>
+        <span class="emoji cursor-pointer px-2 py-1 hover:bg-gray-700 rounded-full">🙌</span>
+      </div>
+
       </div>
 
      <form id="commentForm" class="mt-4 flex flex-col sm:flex-row gap-2">
@@ -120,6 +125,7 @@ function renderPost(post) {
             class="hidden absolute bottom-full mb-2 right-0 flex gap-2 bg-gray-800 p-2 rounded shadow">
           <span class="emoji cursor-pointer px-2">👍</span>
           <span class="emoji cursor-pointer px-2">😂</span>
+          <span class="emoji cursor-pointer px-2">🙂</span>
           <span class="emoji cursor-pointer px-2">❤️</span>
           <span class="emoji cursor-pointer px-2">🔥</span>
           <span class="emoji cursor-pointer px-2">🎉</span>
@@ -310,9 +316,14 @@ document.addEventListener("click", (e) => {
                 class="absolute hidden flex gap-2 bg-gray-800 p-2 rounded shadow">
               <span class="emoji cursor-pointer">👍</span>
               <span class="emoji cursor-pointer">😂</span>
+              <span class="emoji cursor-pointer">🙂</span>
+
               <span class="emoji cursor-pointer">❤️</span>
               <span class="emoji cursor-pointer">🔥</span>
               <span class="emoji cursor-pointer">🎉</span>
+              <span class="emoji cursor-pointer">👀</span>
+            <span class="emoji cursor-pointer">😢</span>
+            <span class="emoji cursor-pointer">🙌</span>
             </div>
   </div>
   <button type="submit" class="mt-2 bg-purple-800 text-white px-3 py-1 rounded text-xs hover:bg-purple-700">
