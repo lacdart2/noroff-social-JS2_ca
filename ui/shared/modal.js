@@ -4,11 +4,10 @@
  */
 
 export function showModal({ message = "Are you sure?", onConfirm, onCancel }) {
-    // Remove if exists already
-    const existing = document.getElementById("customModal");
-    if (existing) existing.remove();
+  const existing = document.getElementById("customModal");
+  if (existing) existing.remove();
 
-    const modalHTML = `
+  const modalHTML = `
     <div id="customModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md text-center">
         <h2 class="text-xl font-semibold mb-4">Confirm Action</h2>
@@ -21,16 +20,16 @@ export function showModal({ message = "Are you sure?", onConfirm, onCancel }) {
     </div>
   `;
 
-    document.body.insertAdjacentHTML("beforeend", modalHTML);
+  document.body.insertAdjacentHTML("beforeend", modalHTML);
 
-    // Hook up events
-    document.getElementById("modalCancelBtn").addEventListener("click", () => {
-        document.getElementById("customModal").remove();
-        if (typeof onCancel === "function") onCancel();
-    });
+  // Hook up events
+  document.getElementById("modalCancelBtn").addEventListener("click", () => {
+    document.getElementById("customModal").remove();
+    if (typeof onCancel === "function") onCancel();
+  });
 
-    document.getElementById("modalConfirmBtn").addEventListener("click", () => {
-        document.getElementById("customModal").remove();
-        if (typeof onConfirm === "function") onConfirm();
-    });
+  document.getElementById("modalConfirmBtn").addEventListener("click", () => {
+    document.getElementById("customModal").remove();
+    if (typeof onConfirm === "function") onConfirm();
+  });
 }

@@ -14,30 +14,72 @@ export function openEditProfileModal(profile) {
   modal.classList.remove("hidden");
 
   const fieldsContainer = document.getElementById("modalFields");
+  /*  fieldsContainer.innerHTML = `
+     <div class="mb-4">
+       <label for="modalBioInput" class="block text-sm font-medium text-gray-700">Bio</label>
+       <textarea id="modalBioInput" class="border border-gray-300 p-2 w-full mt-1 rounded resize-none" rows="3">${(profile.bio || "").trim()}</textarea>
+     </div>
+         <div class="mb-4">
+           <label for="modalAvatarUrl" class="block text-sm font-medium text-gray-700">Avatar URL</label>
+           <input id="modalAvatarUrl" class="border border-gray-300 p-2 w-full mt-1 rounded" 
+                 value="${profile.avatar?.url || ""}" />
+ 
+           <label for="modalAvatarAlt" class="block text-sm font-medium text-gray-700 mt-2">Avatar Alt Text</label>
+           <input id="modalAvatarAlt" class="border border-gray-300 p-2 w-full mt-1 rounded" 
+                 value="${profile.avatar?.alt || ""}" />
+         </div>
+         <div class="mb-4">
+           <label for="modalBannerUrl" class="block text-sm font-medium text-gray-700">Banner URL</label>
+           <input id="modalBannerUrl" class="border border-gray-300 p-2 w-full mt-1 rounded" 
+                 value="${profile.banner?.url || ""}" />
+ 
+           <label for="modalBannerAlt" class="block text-sm font-medium text-gray-700 mt-2">Banner Alt Text</label>
+           <input id="modalBannerAlt" class="border border-gray-300 p-2 w-full mt-1 rounded" 
+                 value="${profile.banner?.alt || ""}" />
+         </div>
+   `; */
   fieldsContainer.innerHTML = `
-    <div class="mb-4">
-      <label for="modalBioInput" class="block text-sm font-medium text-gray-700">Bio</label>
-      <textarea id="modalBioInput" class="border border-gray-300 p-2 w-full mt-1 rounded resize-none" rows="3">${(profile.bio || "").trim()}</textarea>
-    </div>
-        <div class="mb-4">
-          <label for="modalAvatarUrl" class="block text-sm font-medium text-gray-700">Avatar URL</label>
-          <input id="modalAvatarUrl" class="border border-gray-300 p-2 w-full mt-1 rounded" 
-                value="${profile.avatar?.url || ""}" />
+  <div class="mb-4">
+    <label for="modalBioInput" class="block text-sm font-medium text-gray-300">Bio</label>
+    <textarea id="modalBioInput"
+      class="w-full bg-gray-800 border border-gray-700 text-gray-200 rounded-lg p-3 
+             placeholder-gray-400 focus:ring-2 focus:ring-purple-500 outline-none resize-none mt-1"
+      rows="3"
+      placeholder="Write something about yourself...">${(profile.bio || "").trim()}</textarea>
+  </div>
 
-          <label for="modalAvatarAlt" class="block text-sm font-medium text-gray-700 mt-2">Avatar Alt Text</label>
-          <input id="modalAvatarAlt" class="border border-gray-300 p-2 w-full mt-1 rounded" 
-                value="${profile.avatar?.alt || ""}" />
-        </div>
-        <div class="mb-4">
-          <label for="modalBannerUrl" class="block text-sm font-medium text-gray-700">Banner URL</label>
-          <input id="modalBannerUrl" class="border border-gray-300 p-2 w-full mt-1 rounded" 
-                value="${profile.banner?.url || ""}" />
+  <div class="mb-4">
+    <label for="modalAvatarUrl" class="block text-sm font-medium text-gray-300">Avatar URL</label>
+    <input id="modalAvatarUrl"
+      class="w-full bg-gray-800 border border-gray-700 text-gray-200 rounded-lg p-3 
+             placeholder-gray-400 focus:ring-2 focus:ring-purple-500 outline-none mt-1"
+      placeholder="https://example.com/avatar.jpg"
+      value="${profile.avatar?.url || ""}" />
 
-          <label for="modalBannerAlt" class="block text-sm font-medium text-gray-700 mt-2">Banner Alt Text</label>
-          <input id="modalBannerAlt" class="border border-gray-300 p-2 w-full mt-1 rounded" 
-                value="${profile.banner?.alt || ""}" />
-        </div>
-  `;
+    <label for="modalAvatarAlt" class="block text-sm font-medium text-gray-300 mt-2">Avatar Alt Text</label>
+    <input id="modalAvatarAlt"
+      class="w-full bg-gray-800 border border-gray-700 text-gray-200 rounded-lg p-3 
+             placeholder-gray-400 focus:ring-2 focus:ring-purple-500 outline-none mt-1"
+      placeholder="Description for avatar"
+      value="${profile.avatar?.alt || ""}" />
+  </div>
+
+  <div class="mb-4">
+    <label for="modalBannerUrl" class="block text-sm font-medium text-gray-300">Banner URL</label>
+    <input id="modalBannerUrl"
+      class="w-full bg-gray-800 border border-gray-700 text-gray-200 rounded-lg p-3 
+             placeholder-gray-400 focus:ring-2 focus:ring-purple-500 outline-none mt-1"
+      placeholder="https://example.com/banner.jpg"
+      value="${profile.banner?.url || ""}" />
+
+    <label for="modalBannerAlt" class="block text-sm font-medium text-gray-300 mt-2">Banner Alt Text</label>
+    <input id="modalBannerAlt"
+      class="w-full bg-gray-800 border border-gray-700 text-gray-200 rounded-lg p-3 
+             placeholder-gray-400 focus:ring-2 focus:ring-purple-500 outline-none mt-1"
+      placeholder="Description for banner"
+      value="${profile.banner?.alt || ""}" />
+  </div>
+`;
 
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
