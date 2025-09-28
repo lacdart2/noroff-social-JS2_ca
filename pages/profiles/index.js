@@ -268,3 +268,4 @@ function renderLoadMore(totalCount) {
 }
 
 document.getElementById("logoutBtn")?.addEventListener("click", logoutUser);
+

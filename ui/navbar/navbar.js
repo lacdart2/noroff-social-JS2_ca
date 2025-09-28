@@ -131,7 +131,7 @@ export function renderNavbar(containerId = "navbarContainer") {
 </nav>
 `;
 
-  // Highlight active link
+
   const currentPath = window.location.pathname;
   document.querySelectorAll("#menuLinks a").forEach((link) => {
     if (link.getAttribute("href") === currentPath) {

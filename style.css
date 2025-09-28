@@ -277,7 +277,7 @@ input:focus, input:hover {
 .post-details-card {
     outline-offset: 1px;
     background-color: #111827;
-    background-color: #192338;
+    /*    background-color: #192338; */
     outline-offset: 1px;
     border-radius: var(--radius-15-);
     overflow: hidden;

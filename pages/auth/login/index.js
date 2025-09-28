@@ -9,6 +9,8 @@ import { showToast } from "../../../ui/shared/showToast.js"
 import { loginUser } from "../../../services/authService.js";
 import { save } from "../../../utils/storage.js";
 import { renderNavbar } from "../../../ui/navbar/navbar.js";
+import { markAllAsSeen } from "../../../services/notifications/notifications.js";
+
 renderNavbar();
 
 
@@ -21,9 +23,15 @@ form.addEventListener("submit", async (e) => {
 
     try {
         const data = await loginUser(email, password);
+        const user = data.data;
+
         save("accessToken", data.data.accessToken);
         save("user", data.data);
         showToast(`✅ Welcome back, ${data.data.name}!`, "success");
+
+        // to not show old notifications
+        await markAllAsSeen(user.name);
+        save("unseenNotifications", 0);
 
         setTimeout(() => {
             window.location.href = "../../../pages/profile/index.html";
