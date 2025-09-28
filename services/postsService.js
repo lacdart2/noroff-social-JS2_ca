@@ -11,21 +11,6 @@
 
 import { apiClient } from "../utils/apiHelpers.js";
 
-
-/* export async function fetchAllPosts(limit = 20, offset = 0) {
-    const page = offset / limit + 1;
-    return apiClient(
-        `/social/posts?_reactions=true&_comments=true&_author=true&limit=${limit}&page=${page}`
-    );
-}
- */
-/* export async function fetchAllPosts(limit = 100, offset = 0) {
-    return apiClient(
-        `/social/posts?limit=${limit}&offset=${offset}&_author=true&_comments=true&_reactions=true`
-    );
-} */
-
-
 // fetch all posts (pagination,load more fn)
 export async function fetchAllPosts(limit = 20, page = 1, offset = null) {
     let url = `/social/posts?limit=${limit}&page=${page}&_author=true&_comments=true&_reactions=true`;

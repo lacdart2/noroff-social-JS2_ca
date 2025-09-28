@@ -118,7 +118,6 @@ svg,
 i,
 img,
 span {
-    /*    max-width: 100%; */
     height: auto;
     display: inline-block;
     transition: var(--transition-2-);
@@ -279,14 +278,12 @@ input:focus, input:hover {
 .post-details-card {
     outline-offset: 1px;
     background-color: #111827;
-
     outline-offset: 1px;
     border-radius: var(--radius-15-);
     overflow: hidden;
 
 }
 
-.post-details-card {}
 
 .post-card-img,
 .card-details-content img {
@@ -606,17 +603,3 @@ nav div a svg, nav a svg {
     max-width: 120px;
     display: block;
 }
-
-/* @media only screen and (max-width: 409px) {
-    .notification-container {
-        left: 50%;
-        transform: translateX(-50%);
-        outline: 5px solid red;
-
-    }
-
-    body {
-        background-color: red;
-    }
-
-} */

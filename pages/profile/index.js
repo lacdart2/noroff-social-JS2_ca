@@ -18,7 +18,6 @@ import {
     renderFollowersPreview,
     renderFollowingPreview,
 } from "../../ui/profiles/profileUi.js";
-//import { fetchUserPosts } from "../../services/profilePosts.js";
 import { fetchUserPosts } from "../../services/profileServices.js";
 import { renderPosts } from "../../utils/domPosts.js";
 import { apiClient } from "../../utils/apiHelpers.js";
