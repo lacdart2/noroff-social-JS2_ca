@@ -154,53 +154,77 @@ function renderPost(post) {
       </svg>
       Comments (${comments.length})
     </h3>
+          <ul class="space-y-2">
+          ${(() => {
+      const sorted = [...comments].sort(
+        (a, b) => new Date(a.created) - new Date(b.created)
+      );
 
-    <ul class="space-y-2">
-      ${comments.map(c => {
-    const isMyComment = currentUser?.name?.toLowerCase() === c.author.name?.toLowerCase();
-    const isReply = c.replyToId !== null;
+      const childrenMap = {};
+      sorted.forEach(c => {
+        if (c.replyToId) {
+          childrenMap[c.replyToId] = childrenMap[c.replyToId] || [];
+          childrenMap[c.replyToId].push(c);
+        }
+      });
 
-    return `
-          <li class="p-0 ${isReply ? "ml-6" : ""}" data-comment-id="${c.id}">
-            <div class="rounded border ${isReply ? "bg-gray-800 border-gray-700" : "bg-gray-700 border-transparent pt-2"} text-gray-100">
-              <div class="flex items-start justify-between gap-3 p-2">
-                <div class="flex-1">
-                  <a href="/pages/profile/index.html?user=${escapeHTML(c.author.name)}"
-                     class="text-purple-400 hover:underline font-light text-medium capitalize">
-                    ${escapeHTML(c.author.name)}
-                  </a>: ${escapeHTML(c.body)}
-                  <button class="ml-2 transition text-xs text-purple-300 hover:underline"
-                          data-action="reply-comment"
-                          data-comment-id="${c.id}">
-                    Reply
-                  </button>
-                </div>
-                ${isMyComment ? `
-                  <button class="deleteCommentBtn text-gray-400 hover:text-red-500 transition self-start mt-2"
-                          title="Delete comment"
-                          data-action="delete-comment"
-                          data-comment-id="${c.id}">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="18" height="18"
-                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none">
-                      <path stroke="none" d="M0 0h24v24H0z"/>
-                      <path d="M4 7h16" />
-                      <path d="M10 11v6" />
-                      <path d="M14 11v6" />
-                      <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                      <path d="M9 7v-3h6v3" />
-                    </svg>
-                  </button>
-                ` : ""}
-              </div>
-              <div class="px-2 pb-2" data-reply-slot></div>
-            </div>
-          </li>
-        `;
-  }).join("")}
-    </ul>
+      function renderComment(c, depth = 0) {
+        const isMyComment = currentUser?.name?.toLowerCase() === c.author.name?.toLowerCase();
+
+        return `
+                <li class="p-0 ${depth > 0 ? "ml-6 border-l border-gray-600 pl-3" : ""}" data-comment-id="${c.id}">
+                  <div class="rounded bg-gray-${depth > 0 ? "800" : "700"} border border-gray-700 text-gray-100">
+                    <div class="flex items-start justify-between gap-3 p-2">
+                      <div class="flex-1">
+                        <a href="/pages/profile/index.html?user=${escapeHTML(c.author.name)}"
+                          class="text-purple-400 hover:underline font-light text-medium capitalize">
+                          ${escapeHTML(c.author.name)}
+                        </a>: ${escapeHTML(c.body)}
+                        <button class="ml-2 transition text-xs text-purple-300 hover:underline"
+                                data-action="reply-comment"
+                                data-comment-id="${c.id}">
+                          Reply
+                        </button>
+                      </div>
+                      ${isMyComment ? `
+                        <button class="deleteCommentBtn text-gray-400 hover:text-red-500 transition self-start mt-2"
+                                title="Delete comment"
+                                data-action="delete-comment"
+                                data-comment-id="${c.id}">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="18" height="18"
+                                  viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <path d="M4 7h16" />
+                                <path d="M10 11v6" />
+                                <path d="M14 11v6" />
+                                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                <path d="M9 7v-3h6v3" />
+                              </svg>
+                        </button>
+                      ` : ""}
+                    </div>
+                    <div class="px-2 pb-2" data-reply-slot></div>
+                  </div>
+                  ${childrenMap[c.id]
+            ? `<ul class="mt-2 space-y-2">
+                        ${childrenMap[c.id].map(child => renderComment(child, depth + 1)).join("")}
+                      </ul>`
+            : ""}
+                </li>
+              `;
+      }
+
+      return sorted
+        .filter(c => !c.replyToId)
+        .map(c => renderComment(c))
+        .join("");
+    })()}
+        </ul>
+
   </div>
 </div>
 `;
+
 
   setupReactionPicker(postId);
   setupEmojiPicker("commentInput", "commentEmojiBtn", "commentEmojiPicker");
