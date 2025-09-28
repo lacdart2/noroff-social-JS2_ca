@@ -35,16 +35,16 @@
                         </div>
                     </div>
                     <div id="profileHeader" class="flex gap-3">
-                        <button id="editProfileBtn"
-                            class="hidden bg-purple-600 text-white px-4 py-2 rounded shadow hover:bg-purple-700 transition shrink-0">
+                        <button id="editProfileBtn" class="hidden bg-purple-600 text-white px-4 py-2 rounded shadow hover:bg-purple-700 transition shrink-0
+                                   ml-auto md:ml-4 mr-2 md:mr-0">
                             Edit Profile
                         </button>
                     </div>
-
                 </div>
-                <div class="stats-container flex gap-6 mt-6 text-sm">
+
+                <div class="stats-container flex flex-col md:flex-row gap-3 mt-6 text-sm">
                     <div id="myPostsStat"
-                        class="cursor-pointer bg-gray-800 px-4 py-2 rounded-lg shadow flex items-center gap-2 hover:bg-gray-700">
+                        class="flex-1 cursor-pointer bg-gray-800 px-4 py-2 rounded-lg shadow flex items-center justify-center gap-2 hover:bg-gray-700">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
                             class="icon icon-tabler icons-tabler-outline icon-tabler-article">
@@ -56,8 +56,9 @@
                         </svg>
                         Posts: <span id="countPosts">0</span>
                     </div>
+
                     <div id="followersStat"
-                        class="cursor-pointer bg-gray-800 px-4 py-2 rounded-lg shadow flex items-center gap-2 hover:bg-gray-700">
+                        class="flex-1 cursor-pointer bg-gray-800 px-4 py-2 rounded-lg shadow flex items-center justify-center gap-2 hover:bg-gray-700">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
                             class="icon icon-tabler icons-tabler-outline icon-tabler-users">
@@ -69,8 +70,9 @@
                         </svg>
                         Followers: <span id="countFollowers">0</span>
                     </div>
+
                     <div id="followingStat"
-                        class="cursor-pointer bg-gray-800 px-4 py-2 rounded-lg shadow flex items-center gap-2 hover:bg-gray-700">
+                        class="flex-1 cursor-pointer bg-gray-800 px-4 py-2 rounded-lg shadow flex items-center justify-center gap-2 hover:bg-gray-700">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
                             class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
