@@ -11,11 +11,11 @@
 </head>
 
 <body class="flex flex-col min-h-screen bg-black text-white">
-    <header class="w-full p-2">
+    <header class="w-full p-2 w-full fixed top-0 left-0 z-50 bg-black  shadow-md shadow-gray-800/50">
         <div id="navbarContainer" class="w-full"></div>
     </header>
 
-    <main class="flex-1 container mx-auto p-4 space-y-8">
+    <main class="flex-1 container mx-auto p-2 space-y-8 mt-[150px] md:mt-20 lg:mt-26">
         <div class="flex-1 container mx-auto p-4 space-y-8">
             <section class="relative overflow-hidden py-6">
                 <h2 class="flex items-center gap-2 text-lg font-semibold mb-4">
@@ -42,7 +42,7 @@
                 </aside>
 
                 <div class="order-2 md:order-none md:col-span-2 flex flex-col gap-6">
-                    <div class="flex justify-end gap-2 pb-2">
+                    <div class="flex justify-end gap-2 pb-2 hidden sm:flex">
                         <button id="listViewBtn" class="p-2 rounded bg-gray-800 hover:bg-gray-700">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-square">
@@ -85,6 +85,22 @@
         </div>
 
         <div id="batteryLoader" class="flex justify-center items-center my-10"></div>
+        <div class="fixed bottom-6 right-6 group">
+            <a href="../post/create/index.html"
+                class="bg-purple-600 hover:bg-purple-700 text-white w-14 h-14 flex items-center justify-center rounded-full shadow-lg transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12 5l0 14" />
+                    <path d="M5 12l14 0" />
+                </svg>
+            </a>
+            <span
+                class=" absolute right-16 bottom-1/2 translate-y-1/2 opacity-0 group-hover:opacity-100 bg-purple-800 text-white text-xs rounded px-2 py-1 shadow transition w-[100px] inline-block">
+                Create Post
+            </span>
+        </div>
     </main>
     <footer class="bg-gray-900 border-t border-gray-700 py-4 mt-6">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">

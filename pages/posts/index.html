@@ -11,10 +11,10 @@
 </head>
 
 <body class="flex flex-col min-h-screen bg-black text-white">
-  <header class="w-full flex flex-col p-6 md:p-2">
+  <header class="w-full flex flex-col p-6 md:p-2 w-full fixed top-0 left-0 z-50 bg-black shadow-md shadow-gray-800/50">
     <div id="navbarContainer" class="w-full"></div>
     <div class="flex items-center justify-between w-full p-2 mt-6">
-      <nav class="text-sm text-gray-400 mb-4 flex items-center gap-2">
+      <nav class="text-sm text-gray-400  flex items-center gap-2">
         <a href="../feed/index.html" class="hover:text-purple-400 flex items-center gap-1">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -23,23 +23,9 @@
         </a>
         <span class="text-gray-500">/ Posts</span>
       </nav>
-      <div class="px-4 py-2 flex items-center justify-end">
-        <a href="../post/create/index.html"
-          class="inline-flex items-center gap-2 text-sm bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="20" height="20"
-            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none">
-            <path stroke="none" d="M0 0h24v24H0z" />
-            <path d="M12 5v14m-7 -7h14" />
-          </svg>
-          <span>Create Post</span>
-        </a>
-      </div>
-
     </div>
   </header>
-
-
-  <main class="flex-1 container mx-auto px-4 mt-4">
+  <main class="flex-1 container mx-auto px-4 mt-[270px] md:mt-22 lg:mt-25">
     <div id="postSearchContainer" class="w-full mx-auto w-full mb-4"></div>
     <div id="batteryLoader" class="flex justify-center items-center my-10"></div>
     <div id="postsContainer" class="grid gap-4 md:grid-cols-2 lg:grid-cols-3"></div>
@@ -54,6 +40,23 @@
         Next
       </button>
     </div>
+    <div class="fixed bottom-6 right-6 group">
+      <a href="../post/create/index.html"
+        class="bg-purple-600 hover:bg-purple-700 text-white w-14 h-14 flex items-center justify-center rounded-full shadow-lg transition duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M12 5l0 14" />
+          <path d="M5 12l14 0" />
+        </svg>
+      </a>
+      <span
+        class=" absolute right-16 bottom-1/2 translate-y-1/2 opacity-0 group-hover:opacity-100 bg-purple-800 text-white text-xs rounded px-2 py-1 shadow transition w-[100px] inline-block">
+        Create Post
+      </span>
+    </div>
+
   </main>
   <footer class="bg-gray-900 border-t border-gray-700 py-4 mt-6">
     <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">

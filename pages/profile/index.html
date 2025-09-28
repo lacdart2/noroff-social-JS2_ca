@@ -40,6 +40,7 @@
                             Edit Profile
                         </button>
                     </div>
+
                 </div>
                 <div class="stats-container flex gap-6 mt-6 text-sm">
                     <div id="myPostsStat"
@@ -85,7 +86,17 @@
                 <div id="previewFollowers" class="mt-4 hidden"></div>
                 <div id="previewFollowing" class="mt-4 hidden"></div>
             </div>
-
+            <div class="px-0 py-2 my-2 flex items-center justify-start">
+                <a href="../post/create/index.html"
+                    class="inline-flex items-center gap-2 text-sm bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="20"
+                        height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none">
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <path d="M12 5v14m-7 -7h14" />
+                    </svg>
+                    <span>Create Post</span>
+                </a>
+            </div>
             <div id="profilePostsContainer" class="grid gap-4 mt-6"></div>
         </div>
 
