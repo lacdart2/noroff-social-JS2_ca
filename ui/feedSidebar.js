@@ -26,7 +26,7 @@ export function renderLatestPosts(posts) {
         latestContainer.appendChild(latestPost);
 
         latestPost.addEventListener("click", () => {
-            window.location.href = `/ pages / post / detail / index.html ? id = ${post.id} `;
+            window.location.href = `/pages/post/detail/index.html?id=${post.id}`;
         });
         latestPost.classList.add();
     });
@@ -63,7 +63,7 @@ export function renderTrendingTags(posts) {
     trending.forEach(([tag]) => {
         const btn = document.createElement("button");
         btn.className =
-            "inline-block bg-purple-800 text-white text-xs px-3 py-1 rounded-full mr-2 mb-2 hover:bg-blue-700 transition";
+            "inline-block bg-purple-800 text-white text-xs px-3 py-1 rounded-full mr-2 mb-2 hover:bg-purple-600 transition";
         btn.innerText = `#${tag} `;
         trendingContainer.appendChild(btn);
     });
