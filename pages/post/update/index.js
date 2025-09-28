@@ -20,8 +20,9 @@
 import { showToast } from "../../../ui/shared/showToast.js";
 import { renderNavbar } from "../../../ui/navbar/navbar.js";
 import { fetchPostById, updatePost } from "../../../services/postsService.js";
-
+import { requireAuth } from "../../../utils/authGuard.js";
 renderNavbar();
+requireAuth();
 
 const params = new URLSearchParams(window.location.search);
 const postId = params.get("id");

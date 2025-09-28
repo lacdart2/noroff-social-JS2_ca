@@ -146,6 +146,7 @@ JS2-CA-lakhdar_hafsi-092025/
 ## Known Issues
 
 - None reported at the moment
+- (not sure if notifications may load older notification sometimes)
 
 ---
 

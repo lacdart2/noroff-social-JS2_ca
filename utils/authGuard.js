@@ -5,6 +5,6 @@
 export function requireAuth() {
     const token = localStorage.getItem("accessToken");
     if (!token) {
-        window.location.href = "/pages/auth/login/index.html";
+        window.location.href = "/index.html";
     }
 }

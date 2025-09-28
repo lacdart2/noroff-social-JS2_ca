@@ -13,10 +13,10 @@ import { load } from "../../../utils/storage.js";
 import { showToast } from "../../../ui//shared/showToast.js";
 import { apiClient } from "../../../utils/apiHelpers.js";
 import { renderNavbar } from "../../../ui/navbar/navbar.js";
-
+import { requireAuth } from "../../../utils/authGuard.js";
 
 renderNavbar()
-
+requireAuth();
 const form = document.querySelector("#createPostForm");
 
 form.addEventListener("submit", handleFormSubmit);

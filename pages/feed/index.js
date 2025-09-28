@@ -6,7 +6,6 @@ import { renderPosts } from "../../utils/domPosts.js";
 import { createFeedCard } from "../../ui/feedCard.js";
 import { renderBatteryLoader, showLoader, hideLoader } from "../../ui/shared/batteryLoader.js";
 import { renderLatestPosts, renderTrendingTags, renderPeopleYouMayKnow } from "../../ui/feedSidebar.js";
-import { load } from "../../utils/storage.js";
 import { showToast } from "../../ui/shared/showToast.js";
 
 const listViewBtn = document.getElementById("listViewBtn");
@@ -64,12 +63,6 @@ async function renderSidebar() {
  */
 
 async function loadPosts() {
-    const token = load("accessToken");
-    if (!token) {
-        showToast("⛔ You must be logged in to view posts.", "error");
-        window.location.href = "/pages/auth/login/index.html";
-        return;
-    }
 
     renderBatteryLoader();
     showLoader();

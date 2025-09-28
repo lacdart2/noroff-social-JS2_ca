@@ -12,9 +12,9 @@ import { showModal } from "../../../ui/shared/modal.js";
 import { escapeHTML } from "../../../utils/security.js";
 import { setupReactionPicker } from "../../../ui/reactionPicker.js";
 import { setupEmojiPicker } from "../../../ui/emojiPicker.js";
-
+import { requireAuth } from "../../../utils/authGuard.js";
 renderNavbar();
-
+requireAuth();
 const postContainer = document.getElementById("postContainer");
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get("id");
