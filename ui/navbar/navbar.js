@@ -294,10 +294,10 @@ export function renderNavbar(containerId = "navbarContainer") {
         </a>
       </div>
 
-      <div class="relative notifications-container">
-        <button id="notificationBtn" class="relative rounded-full p-1 hover:bg-gray-800">
+      <div class="relative notifications-container flex gap-2 mr-2">
+        <button id="notificationBtn" class="relative rounded-full p-2 hover:bg-gray-800">
           <span id="notificationCount"
-                class="absolute -top-1 -right-1 bg-red-500 text-white rounded-full text-[10px] px-1 leading-none hidden z-10">
+                class="absolute flex items-center justify-center -top-1 -right-0 bg-red-500 text-white text-[12px] w-[16px] h-[16px] px-1 rounded-full leading-none hidden z-10">
             0
           </span>
           <span id="notificationBellIcon"></span>

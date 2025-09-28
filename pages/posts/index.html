@@ -4,29 +4,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Posts - MySocialApp</title>
+  <title>Posts - MySocialApp</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script type="module" src="./index.js"></script>
   <link rel="stylesheet" href="../../style.css">
 </head>
 
 <body class="flex flex-col min-h-screen bg-black text-white">
-  <header class="w-full flex flex-col p-2">
+  <header class="w-full flex flex-col p-6 md:p-2">
     <div id="navbarContainer" class="w-full"></div>
+    <div class="flex items-center justify-between w-full p-2 mt-6">
+      <nav class="text-sm text-gray-400 mb-4 flex items-center gap-2">
+        <a href="../feed/index.html" class="hover:text-purple-400 flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Feed
+        </a>
+        <span class="text-gray-500">/ Posts</span>
+      </nav>
+      <div class="px-4 py-2 flex items-center justify-end">
+        <a href="../post/create/index.html"
+          class="inline-flex items-center gap-2 text-sm bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="20" height="20"
+            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none">
+            <path stroke="none" d="M0 0h24v24H0z" />
+            <path d="M12 5v14m-7 -7h14" />
+          </svg>
+          <span>Create Post</span>
+        </a>
+      </div>
 
-    <div class="px-4 py-2 flex items-center justify-end">
-      <a href="../post/create/index.html"
-        class="inline-flex items-center gap-2 text-sm bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="20" height="20"
-          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none">
-          <path stroke="none" d="M0 0h24v24H0z" />
-          <path d="M12 5v14m-7 -7h14" />
-        </svg>
-        <span>Create Post</span>
-      </a>
     </div>
-
-
   </header>
 
 
