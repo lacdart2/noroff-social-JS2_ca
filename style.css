@@ -25,7 +25,6 @@
     --clr-bg-card: hsl(221, 100%, 32%, .2);
     --clr-bg-card: hsl(0, 0%, 1%, .8);
     --grad-bkr-: linear-gradient(to left, #00ff00, #be4e11);
-    /* box-model */
     --1-: 1rem;
     --2-: 2rem;
     --05-: .5rem;
@@ -127,58 +126,13 @@ body, p, a, span, li {
 
 
 body {
-    /* 
-     line-height: 1.5; */
-    /*    overflow: hidden;
-     position: relative; */
-
     height: 100dvh;
     background-color: #070a13;
     font-family: sans-serif;
-
     position: relative;
 
-
 }
 
-
-/* #navbarContainer {
-    margin: 0;
-    min-width: 100%;
-
-
-}
- */
-
-/* #navbarContainer nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    min-width: 100%;
-}
- */
-/* #navbarContainer .nav-links {
-    flex: 1;
-    justify-content: center;
-} */
-/* 
-#navbarContainer .nav-links a:first-of-type {
-    margin-inline-start: auto;
-
-}
- */
-
-
-
-/* #navbarContainer .nav-links .notifications-container {
-    margin-inline-start: auto;
-}
-
-#navbarContainer nav .logo {
-    margin-inline-end: auto;
-}
- */
 #navbarContainer a,
 #navbarContainer nav a {
     display: flex;
@@ -200,7 +154,6 @@ button {
 }
 
 input:focus, input:hover {
-
     outline: 1px solid rgba(192, 189, 189, 0.09);
 }
 
@@ -283,17 +236,7 @@ input:focus, input:hover {
     background-color: #2a2a2a;
 }
 
-
-
-
 /**** post stats ******/
-.post-img-container {}
-
-/*  #likeBtn {
-     position: absolute;
-     top: 0;
-     right: 1rem;
- } */
 
 .edit-btn, .delete-btn {
     border-radius: var(--radius-50-);
@@ -324,31 +267,21 @@ input:focus, input:hover {
 
 .post-card,
 .post-details-card {
-    /* outline: .2px solid #717171; */
     outline-offset: 1px;
     background-color: #111827;
     background-color: #192338;
-    /* outline: .2px solid var(--gray2-txt-); */
     outline-offset: 1px;
     border-radius: var(--radius-15-);
-    /*     outline: 1px solid #374f82;
-    outline: .5px solid var(--deep-purple);
-    outline-offset: 1px; */
     overflow: hidden;
 
-
 }
-
 
 
 .post-card-img,
 .card-details-content img {
     border-radius: var(--radius-15-);
-    /*  outline: .2px solid var(--gray2-txt-); */
     outline-offset: 4px;
     overflow: hidden;
-
-
 }
 
 .card-details-content img {
@@ -359,8 +292,6 @@ input:focus, input:hover {
     padding: var(--1-);
 
 }
-
-
 
 .post-details-card h2 {
     font-family: "Roboto", sans-serif;
@@ -406,21 +337,13 @@ input:focus, input:hover {
 }
 
 #reactionBtn svg {
-
     fill: var(--deep-purple);
     stroke: var(--deep-purple);
 }
 
 /***** all users page *******/
-/* aside {
-    outline: .2px solid var(--gray2-txt-);
-    outline-offset: 1px;
-
-} */
-
 
 #searchFeedback {
-
     color: var(--white-txt-);
     display: inline-block;
     width: max-content;
@@ -438,14 +361,6 @@ input:focus, input:hover {
     border-radius: var(--radius-4-);
     transition: var(--transition-2-);
 }
-
-/* #loadMoreContainer {
-    position: relative;
-    z-index: 100;
-    outline: 1px solid red;
-
-
-} */
 
 .load-more-btn {
     position: relative;
@@ -516,7 +431,6 @@ input:focus, input:hover {
     font-size: 1rem;
 }
 
-/* show toast msg*/
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -549,7 +463,6 @@ input:focus, input:hover {
     animation: fade-out 0.3s ease-in forwards;
 }
 
-/* battery loader **/
 @keyframes battery-fill {
     0% {
         background-color: #e5e7eb;
@@ -619,8 +532,6 @@ input:focus, input:hover {
 
 
 /** Notifications****/
-
-
 .notif-div {
     padding: var(--05-) var(--08-);
     margin: var(--02-)0;
@@ -666,9 +577,8 @@ nav div a svg, nav a svg {
 }
 
 .main-feed-container aside .aside-section {
-    background-color: #111827;
     background-color: #192338;
-    /*  background-color: #181e2a; */
+
 }
 
 
