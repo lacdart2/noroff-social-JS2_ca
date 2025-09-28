@@ -43,7 +43,7 @@ export function renderNavbar(containerId = "navbarContainer") {
 
   // auth navbar
   container.innerHTML = `
-<nav class="text-gray-200 shadow-lg px-4 py-2 w-full m-0 relative border">
+<nav class="text-gray-200 shadow-lg px-4 py-2 w-full m-0 relative ">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between w-full ">
         <div class="flex w-full flex-wrap items-center justify-between w-full gap-4 md:flex-nowrap md:gap-6">
             <a href="/pages/feed/index.html" class="logo text-xl font-bold text-purple-500 hover:text-purple-400">
@@ -63,7 +63,7 @@ export function renderNavbar(containerId = "navbarContainer") {
                 </a>
             </div>
 
-            <div class="relative notifications-container flex gap-2 mx-auto md:mr-1 border">
+            <div class="relative notifications-container flex gap-2 mx-auto md:mr-1 ">
                 <button id="notificationBtn" class="relative rounded-full p-2 hover:bg-gray-800">
                     <span id="notificationCount"
                         class="absolute flex items-center justify-center -top-1 -right-0 bg-red-500 text-white text-[12px] w-[16px] h-[16px] px-1 rounded-full leading-none hidden z-10">
