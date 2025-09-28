@@ -112,9 +112,9 @@ export function renderNavbar(containerId = "navbarContainer") {
             </a>
           </li>
           <li class="w-full my-2">
-            <a href="/pages/posts/index.html"
+            <a href="/pages/feed/index.html"
                class="flex items-center gap-2 w-full rounded px-3 py-2 text-sm text-gray-200 hover:bg-gray-700">
-              My Posts
+             Feed
             </a>
           </li>
           <li class="my-1 border-t border-gray-700 w-full"></li>
