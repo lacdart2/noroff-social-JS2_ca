@@ -49,8 +49,7 @@ export function renderNavbar(containerId = "navbarContainer") {
             <a href="/pages/feed/index.html" class="logo text-xl font-bold text-purple-500 hover:text-purple-400">
                 MySocialApp
             </a>
-
-            <div id="menuLinks" class="flex flex-row gap-4 md:gap-6">
+            <div id="menuLinks" class="flex flex-row gap-4 md:gap-6 mx-auto">
                 <a href="/pages/feed/index.html" class="flex items-center gap-1 text-gray-400 hover:text-purple-300">
                     Feed
                 </a>
